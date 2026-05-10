@@ -15,7 +15,7 @@ import { THEME } from "../constants/theme";
 import { MessageBubble } from "./MessageBubble";
 import { ThinkingBubble } from "./ThinkingBubble";
 
-export const ChatArea = ({
+export const ChatWorkspace = ({
   messages,
   question,
   setQuestion,

@@ -12,17 +12,22 @@ export async function  askQuestion(req,res) {
       });
     }
 
+    console.log(`[Chat] Incoming question for collection: ${collectionName || "default"}`);
+    console.log(`[Chat] Query: "${question}"`);
+
     let chunks = [];
     try {
       if (collectionName) {
         chunks = await retrieveChunks(question, collectionName);
+        console.log(`[Chat] Retrieved ${chunks.length} relevant chunks`);
       }
     } catch (error) {
-      console.log("Retrieval skipped or failed:", error.message);
+      console.log("[Chat Warning] Retrieval failed:", error.message);
       // Continue without chunks (for greetings/general talk)
     }
 
     const answer = await generateAnswer(question, chunks);
+    console.log(`[Chat] Answer generated successfully`);
 
     res.status(200).json({
       success: true,

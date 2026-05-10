@@ -12,12 +12,17 @@ export async function uploadFile(req, res) {
     }
 
     filePath = req.file.path;
+    console.log(`[Upload] Received file: ${req.file.originalname} (${req.file.size} bytes)`);
+    
     const result = await ingestDocument(filePath, {
       originalName: req.file.originalname,
     });
 
+    console.log(`[Upload] Successfully indexed: ${req.file.originalname}`);
+
     // Cleanup: Delete file after successful indexing
     if (fs.existsSync(filePath)) {
+      console.log(`[Upload] Cleaning up temp file: ${filePath}`);
       fs.unlinkSync(filePath);
     }
 
@@ -27,8 +32,10 @@ export async function uploadFile(req, res) {
       data: result
     });
   } catch (error) {
+    console.error(`[Upload Error] Indexing failed: ${error.message}`);
     // Cleanup: Delete file even if indexing fails
     if (filePath && fs.existsSync(filePath)) {
+      console.log(`[Upload] Cleaning up temp file after error: ${filePath}`);
       fs.unlinkSync(filePath);
     }
 
