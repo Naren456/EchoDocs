@@ -15,29 +15,56 @@ interface Message {
 const markdownStyles = StyleSheet.create({
   body: {
     color: THEME.colors.textPrimary,
-    fontSize: 15,
-    lineHeight: 24,
+    fontSize: 14,
+    lineHeight: 22,
   },
   strong: {
     fontWeight: "800",
     color: THEME.colors.accent,
   },
+  table: {
+    borderWidth: 1,
+    borderColor: THEME.colors.border,
+    borderRadius: 8,
+    marginVertical: 12,
+    backgroundColor: "rgba(255, 255, 255, 0.02)",
+  },
+  tr: {
+    borderBottomWidth: 1,
+    borderColor: THEME.colors.border,
+    flexDirection: "row",
+  },
+  th: {
+    padding: 10,
+    backgroundColor: THEME.colors.surfacePaper,
+    fontWeight: "900",
+    color: THEME.colors.textSecondary,
+    fontSize: 11,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+  },
+  td: {
+    padding: 10,
+    color: THEME.colors.textPrimary,
+    fontSize: 13,
+  },
   bullet_list: {
-    marginVertical: 8,
+    marginVertical: 12,
   },
   list_item: {
     flexDirection: "row",
     alignItems: "flex-start",
+    marginBottom: 8,
   },
   bullet_list_icon: {
     color: THEME.colors.accent,
-    fontSize: 20,
-    marginRight: 8,
-    lineHeight: 24,
+    fontSize: 18,
+    marginRight: 10,
+    lineHeight: 22,
   },
   paragraph: {
     marginTop: 0,
-    marginBottom: 8,
+    marginBottom: 12,
   },
 });
 
@@ -124,24 +151,24 @@ const styles = StyleSheet.create({
   bubble: {
     padding: THEME.spacing.lg,
     borderRadius: THEME.radius.lg,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 4,
+    borderWidth: 1,
+    borderColor: THEME.colors.border,
   },
   userBubble: {
-    backgroundColor: THEME.colors.accent,
+    backgroundColor: THEME.colors.surfacePaper,
     borderBottomRightRadius: 4,
+    borderRightWidth: 4,
+    borderRightColor: THEME.colors.accent,
   },
   botBubble: {
     backgroundColor: THEME.colors.surfaceSecondary,
     borderBottomLeftRadius: 4,
   },
   userText: {
-    color: "#ffffff",
-    fontWeight: "700",
-    fontSize: 15,
+    color: THEME.colors.textPrimary,
+    fontWeight: "600",
+    fontSize: 14,
+    lineHeight: 22,
   },
   sourceContainer: {
     marginTop: THEME.spacing.lg,

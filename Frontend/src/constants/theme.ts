@@ -1,20 +1,17 @@
 export const THEME = {
   colors: {
-    background: "#0A0A0B", // Deeper black
-    surface: "#141416",    // Dark surface
-    surfaceSecondary: "#1C1C1E",
-    border: "#2C2C2E",
+    background: "#09090B", // Professional Obsidian
+    surface: "#0F0F11",    
+    surfaceSecondary: "#171719",
+    surfacePaper: "#1C1C1E", 
+    border: "#27272A",
     
-    // NEW ACCENT: Emerald/Teal for a fresh AI look
-    accent: "#10B981", 
-    accentLight: "rgba(16, 185, 129, 0.1)",
+    accent: "#10B981", // Emerald Identity
+    accentLight: "rgba(16, 185, 129, 0.08)",
     
-    textPrimary: "#F2F2F7",
+    textPrimary: "#FAFAFA",
     textSecondary: "#A1A1AA",
-    textMuted: "#636366",
-    
-    userBubble: "#10B981", // User bubble matches accent
-    botBubble: "#1C1C1E",
+    textMuted: "#52525B",
   },
   spacing: {
     xs: 4,

@@ -31,5 +31,7 @@ export async function generateAnswer(question, chunks) {
     ],
   });
 
-  return response.choices[0].message.content;
+  const answer = response.choices[0].message.content;
+  console.log(`[LLM Response] Answer generated (${answer.length} chars)`);
+  return answer;
 }
